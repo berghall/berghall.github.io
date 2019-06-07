@@ -7,7 +7,7 @@ import Responsive from "react-responsive"
 import FabButton from "../components/shared/FabButton"
 import SocialNetworks from "../components/me/social-networks"
 
-import profile1 from "../../static/img/profile1.jpg"
+// import profile1 from "../../static/img/profile1.jpg"
 
 import THEME from "../theme"
 
@@ -27,7 +27,7 @@ const ContentArea = ({ data }: any) => (
     >
       I'm Daniel Berghäll
     </h1>
-    <img src={profile1}/>
+    {/* <img src={profile1} alt="Daniel Berghäll"/> */}
     {
       // tslint:disable:react-no-dangerous-html
       <div dangerouslySetInnerHTML={{ __html: data.site.siteMetadata.about }} />

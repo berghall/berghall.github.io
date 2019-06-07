@@ -60,7 +60,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "Daniel Berghälls portfolio",
+        name: "daniel-berghalls-portfolio",
         short_name: "berghall-portfolio",
         start_url: "/",
         background_color: "#eeeeee",
