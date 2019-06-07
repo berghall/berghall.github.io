@@ -2,7 +2,7 @@
   "name": "gatsby-starter-haezl",
   "private": true,
   "description": "A lightweight, mobile first blog starter with infinite scroll and Material-UI design elements for Gatsby",
-  "homepage": "blog.redzy.fi",
+  "homepage": "berghall.dev",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
