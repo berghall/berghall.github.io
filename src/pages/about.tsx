@@ -1,8 +1,13 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+
 import Card from "@material-ui/core/Card"
+
 import Responsive from "react-responsive"
 import FabButton from "../components/shared/FabButton"
+import SocialNetworks from "../components/me/social-networks"
+
+import profile1 from "../../static/img/profile1.jpg"
 
 import THEME from "../theme"
 
@@ -10,7 +15,7 @@ const Mobile = props => <Responsive {...props} maxWidth={767} />
 const Default = props => <Responsive {...props} minWidth={768} />
 
 const ContentArea = ({ data }: any) => (
-  <Card style={{ padding: 50 }}>
+  <Card style={{ padding: 50, flexGrow: 1 }}>
     <h1
       style={{
         marginBottom: 30,
@@ -22,6 +27,7 @@ const ContentArea = ({ data }: any) => (
     >
       I'm Daniel Berghäll
     </h1>
+    <img src={profile1}/>
     {
       // tslint:disable:react-no-dangerous-html
       <div dangerouslySetInnerHTML={{ __html: data.site.siteMetadata.about }} />
@@ -57,6 +63,7 @@ export default ({ data }: any) => (
         >
           <HeaderArea />
           <ContentArea data={data} />
+          <SocialNetworks networks={data.site.siteMetadata.networks} />
         </div>
       </div>
     </Default>
@@ -73,6 +80,7 @@ export const query = graphql`
       siteMetadata {
         title
         about
+        networks
       }
     }
   }

@@ -60,8 +60,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "gatsby-starter-haezl",
-        short_name: "haezl",
+        name: "Daniel Berghälls portfolio",
+        short_name: "berghall-portfolio",
         start_url: "/",
         background_color: "#eeeeee",
         theme_color: "#0c9ed1",
