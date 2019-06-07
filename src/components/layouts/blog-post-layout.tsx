@@ -39,10 +39,6 @@ const ContentArea = ({ title, children }: IContentAreaProps) => (
       <Card style={{ padding: 15 }}>
         <h1
           style={{
-            marginBottom: 30,
-            marginTop: 0,
-            marginLeft: 70,
-            marginRight: 70,
             textAlign: "center",
           }}
         >
