@@ -2,6 +2,7 @@
   "name": "gatsby-starter-haezl",
   "private": true,
   "description": "A lightweight, mobile first blog starter with infinite scroll and Material-UI design elements for Gatsby",
+  "homepage": "blog.redzy.fi",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -11,7 +12,9 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d public"
   },
   "dependencies": {
     "@babel/core": "^7.4.0",
@@ -36,6 +39,7 @@
     "gatsby-source-filesystem": "^2.0.22",
     "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-sharp": "^2.1.17",
+    "gh-pages": "^2.0.1",
     "mobx": "^5.9.4",
     "mobx-react": "^5.4.3",
     "prismjs": "^1.16.0",
