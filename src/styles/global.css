@@ -1,7 +1,10 @@
 html {
     scroll-behavior: smooth;
 }
-
+a {
+    color: #176786;
+    background-image: none;
+}
 .anchor {
     background-image: none;
 }

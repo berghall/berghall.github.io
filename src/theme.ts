@@ -23,7 +23,7 @@ const THEME = {
       backgroundColor: "#eeeeee",
     },
     header: {
-      backgroundImage: "linear-gradient(20deg, #039be5, #26a69a)",
+      backgroundImage: "linear-gradient(20deg, #176786, #2E819D)",
     },
     aboutButton: {
       color: "white",
@@ -52,7 +52,7 @@ const THEME = {
     height: 25,
   },
   fabButton: {
-    color: "#059ce2",
+    color: "#176786",
     backgroundColor: "white",
   },
   networkButton: {

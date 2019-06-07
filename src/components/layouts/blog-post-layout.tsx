@@ -1,5 +1,6 @@
 import * as React from "react"
 import Image, { FluidObject } from "gatsby-image"
+import { navigate } from "gatsby"
 import Card from "@material-ui/core/Card"
 import Responsive from "react-responsive"
 
@@ -54,12 +55,12 @@ const ContentArea = ({ title, children }: IContentAreaProps) => (
 )
 
 const HeaderArea = ({ cover }: IHeaderArea) => {
-  const goBack = () => window.history.back()
+  const goBack = () => navigate("/")
 
   return (
     <>
       <FabButton onClickHandler={goBack} />
-      <div style={{ height: "auto", width: "auto" }}>
+      <div style={{ height: "auto", width: "auto", backgroundColor: "#176786" }}>
         {cover ? <Image fluid={cover} /> : null}
       </div>
     </>

@@ -1,29 +1,20 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Haezl`,
+    title: `Daniel Berghäll Portfolio`,
     author: {
-      name: "gatsby starter haezl",
+      name: "Hello, I'm Daniel",
       image: "/img/me.png",
-      biography: "A lightweight, mobile first blog starter with infinite scroll \
-        and Material-UI design elements for Gatsby.",
+      biography: "For a living I hack around with front-end technology",
     },
     // for a list of supported networks take a look at https://jaketrent.github.io/react-social-icons/
     networks: [
-      "https://twitter.com/iamhaezl",
-      "https://github.com/haezl/gatsby-starter-haezl",
-      "mailto:mail@haezl.at",
+      "https://github.com/berghall",
+      "mailto:daniel.berghall@gmail.com",
     ],
-    about: '<p>A lightweight, mobile first blog starter with infinite scroll \
-    and Material-UI design elements for \
-    <a href="https://github.com/gatsbyjs/gatsby" target="_blank">Gatsby</a>. </p> \
-    <p>For a quick start with this starter checkout the \
-    <a href="/posts/get-started/get-started/">Get Started</a> guide. For \
-    an overview of plugins used in this starter have a look at \
-    <a href="/posts/gatsby-plugins/gatsby-plugins/">Plugins</a>. \
-    To see a markdown blog entry in action click \
-    <a href="/posts/markdown/markdown-test/">here</a>. \
-    </p> \
-    ',
+    about: `
+      I'm a passionate young web developer who likes to tinker with new web technologies as well as IoT devices.
+      I specialize in things like WordPress, React and Vue.   
+    `,
   },
   plugins: [
     `gatsby-plugin-tslint`,
