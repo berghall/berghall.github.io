@@ -1,5 +1,6 @@
 ---
-title: "Work Project: Supervanhemman keittokirja"
+title: "Supervanhemman keittokirja, Work Project"
+tags: ["work", "project"]
 date: "2018-01-09"
 description: "This entry is meant to give an overview of what my role was in the making of a Progressive Web App called Supervanhemman keittokirja."
 cover: "super-lady.png"

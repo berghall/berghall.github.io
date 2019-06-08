@@ -56,7 +56,7 @@ const HeaderArea = ({ cover }: IHeaderArea) => {
   return (
     <>
       <FabButton onClickHandler={goBack} />
-      <div style={{ height: "auto", width: "auto", backgroundColor: "#176786" }}>
+      <div style={{ height: "auto", width: "auto" }}>
         {cover ? <Image fluid={cover} /> : null}
       </div>
     </>

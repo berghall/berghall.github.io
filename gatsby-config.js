@@ -4,16 +4,16 @@ module.exports = {
     author: {
       name: "Hello, I'm Daniel",
       image: "/img/me.png",
-      biography: "For a living I hack around with front-end technology",
+      biography: "Presenting an independent portfolio"
     },
     // for a list of supported networks take a look at https://jaketrent.github.io/react-social-icons/
     networks: [
       "https://github.com/berghall",
-      "mailto:daniel.berghall@gmail.com",
+      "mailto:daniel.berghall@gmail.com"
     ],
     about: `
-      I'm a passionate young web developer who likes to tinker with new web technologies as well as IoT devices.
-      I specialize in things like WordPress, React and Vue.   
+      I'm a passionate web developer from Finland who likes to tinker with new web technologies as well as IoT devices.
+      I specialize in things like WordPress, React and Vue.
     `,
   },
   plugins: [
@@ -60,8 +60,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "daniel-berghalls-portfolio",
-        short_name: "berghall-portfolio",
+        name: "Daniel Berghälls's portfolio",
+        short_name: "Daniels portfolio",
         start_url: "/",
         background_color: "#eeeeee",
         theme_color: "#0c9ed1",
