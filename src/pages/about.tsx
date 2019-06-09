@@ -25,7 +25,7 @@ const ContentArea = ({ data }: any) => (
         textAlign: "center",
       }}
     >
-      I'm Daniel Berghäll
+      I'm Daniel Berghälll
     </h1>
     <img src={profile1} alt="Daniel Berghäll"/>
     {

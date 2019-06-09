@@ -19,4 +19,5 @@ before_script:
 script:
   - npm run test
 after_success:
+  - cd $TRAVIS_BUILD_DIR/public && echo "berghall.dev" > CNAME
   - npm run deploy
