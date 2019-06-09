@@ -26,7 +26,7 @@ At the time of writing there are around 86 different tests you can test on your 
 
 # The stack
 
-Puhti uses WordPress for the website backend so the e-commerce shop was handcrafted with _you guessed it_ WooCommerce. WooCommerce documentation has has be one of the most confusing I've ever encountered, so the process to make up with the project customer's requests it took quit the time to find the correct methods to use and deciding which plugins to install. 
+Puhti uses WordPress for the website backend so the e-commerce shop was handcrafted with _you guessed it_ WooCommerce. WooCommerce documentation has to be one of the most confusing I've ever encountered, so the process to make up with the project customer's requests it took quite the time to find the correct methods to use and deciding which plugins to install. 
 
 For the Dashboard which the user logs into was made in collaboration with KiskoLabs.
 
