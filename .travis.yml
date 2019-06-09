@@ -18,5 +18,5 @@ before_script:
 script:
   - yarn run test
 after_success:
-  - cd $TRAVIS_BUILD_DIR && echo "berghall.dev" > CNAME
+  - echo "berghall.dev" > ./public/CNAME
   - yarn run deploy
