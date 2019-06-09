@@ -14,7 +14,7 @@ deploy:
   on:
     branch: master
 before_script:
-  - yarn install gatsby-cli
+  - yarn add gatsby-cli
 script:
   - yarn run test
 after_success:
