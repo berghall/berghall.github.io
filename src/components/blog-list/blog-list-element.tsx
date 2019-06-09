@@ -20,6 +20,8 @@ interface IBlogListElement {
   }
 }
 
+React
+
 export default ({ data }: IBlogListElement) => (
   <div style={{ marginTop: 25, marginBottom: 25 }}>
     <Card>

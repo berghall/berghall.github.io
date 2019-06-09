@@ -9,6 +9,7 @@ interface IBlogPost {
       html: string
       frontmatter: {
         title: string
+        tags: string[]
         cover: {
           childImageSharp: {
             fluid: FluidObject
@@ -27,7 +28,7 @@ export default ({ data }: IBlogPost) => {
       : null
 
   return (
-    <Layout title={node.frontmatter.title} cover={cover}>
+    <Layout title={node.frontmatter.title} cover={cover} tags={node.frontmatter.tags}>
       {
         // tslint:disable:react-no-dangerous-html
         <div dangerouslySetInnerHTML={{ __html: node.html }} />
@@ -43,6 +44,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        tags
         cover {
           childImageSharp {
             ... on ImageSharp {

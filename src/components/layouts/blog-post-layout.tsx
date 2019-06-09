@@ -2,10 +2,12 @@ import * as React from "react"
 import Image, { FluidObject } from "gatsby-image"
 import { navigate } from "gatsby"
 import Card from "@material-ui/core/Card"
+import Chip from "@material-ui/core/Chip"
 import Responsive from "react-responsive"
 
 import THEME from "../../theme"
 import FabButton from "../shared/FabButton"
+import Chips from "../shared/Chips"
 
 const Mobile = props => <Responsive {...props} maxWidth={767} />
 const Default = props => <Responsive {...props} minWidth={768} />
@@ -13,6 +15,7 @@ const Default = props => <Responsive {...props} minWidth={768} />
 interface IContentAreaProps {
   children: React.ReactNode
   title: string
+  tags: string[]
 }
 
 interface IHeaderArea {
@@ -23,15 +26,17 @@ interface IBlogPostLayout {
   children: React.ReactNode
   title: string
   cover: FluidObject
+  tags: string[]
 }
 
-const ContentArea = ({ title, children }: IContentAreaProps) => (
+const ContentArea = ({ title, children, tags }: IContentAreaProps) => (
   <>
     <Default>
       <Card style={{ padding: 50 }}>
         <h1 style={{ marginBottom: 30, marginTop: 0, textAlign: "center" }}>
           {title}
         </h1>
+        <Chips labels={tags} />
         {children}
       </Card>
     </Default>
@@ -44,6 +49,7 @@ const ContentArea = ({ title, children }: IContentAreaProps) => (
         >
           {title}
         </h1>
+        <Chips labels={tags} />
         {children}
       </Card>
     </Mobile>
@@ -63,7 +69,7 @@ const HeaderArea = ({ cover }: IHeaderArea) => {
   )
 }
 
-export default ({ title, cover, children }: IBlogPostLayout) => {
+export default ({ title, cover, tags, children }: IBlogPostLayout) => {
   return (
     <div style={{ backgroundColor: THEME.blogPost.layout.backgroundColor }}>
       <Default>
@@ -78,12 +84,12 @@ export default ({ title, cover, children }: IBlogPostLayout) => {
           }}
         >
           <HeaderArea cover={cover} />
-          <ContentArea title={title}>{children}</ContentArea>
+          <ContentArea title={title} tags={tags}>{children}</ContentArea>
         </div>
       </Default>
       <Mobile>
         <HeaderArea cover={cover} />
-        <ContentArea title={title}>{children}</ContentArea>
+        <ContentArea title={title} tags={tags}>{children}</ContentArea>
       </Mobile>
     </div>
   )
