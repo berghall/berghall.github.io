@@ -14,7 +14,7 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
     "predeploy": "yarn run build",
-    "deploy": "gatsby build && gh-pages -d public"
+    "deploy": "gatsby build && cp ./src/CNAME public/ && gh-pages -d public"
   },
   "dependencies": {
     "@babel/core": "^7.4.0",
