@@ -9,7 +9,8 @@ module.exports = {
     // for a list of supported networks take a look at https://jaketrent.github.io/react-social-icons/
     networks: [
       "https://github.com/berghall",
-      "mailto:daniel.berghall@gmail.com"
+      "mailto:daniel.berghall@gmail.com",
+      "https://linkedin.com/in/daniel-berghäll-693169105"
     ],
     about: `
       I'm a passionate web developer from Finland who likes to tinker with new web technologies as well as IoT devices.
