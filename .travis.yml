@@ -1,13 +1,22 @@
 language: node_js
 node_js:
   - stable
-
+  
+cache:
+  directories:
+  - node_modules
 deploy:
   provider: pages
-  edge: true
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-  keep_history: true
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
   local_dir: public
+  keep-history: true
   on:
     branch: master
+before_script:
+  - npm i -g gatsby
+  - npm i
+script:
+  - npm run test
+after_success:
+  - npm run deploy
