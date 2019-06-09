@@ -1,7 +1,7 @@
+dist: trusty
 language: node_js
 node_js:
   - stable
-  
 cache:
   directories:
   - node_modules
@@ -11,6 +11,7 @@ deploy:
   github-token: $GITHUB_TOKEN
   local_dir: public
   keep-history: true
+  fqdn: berghall.dev
   on:
     branch: master
 before_script:
