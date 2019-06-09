@@ -14,10 +14,9 @@ deploy:
   on:
     branch: master
 before_script:
-  - npm i -g gatsby
-  - npm i
+  - yarn install gatsby-cli
 script:
-  - npm run test
+  - yarn run test
 after_success:
-  - cd public && echo "berghall.dev" > CNAME
-  - npm run deploy
+  - echo "berghall.dev" > CNAME
+  - yarn run deploy
