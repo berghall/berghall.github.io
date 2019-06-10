@@ -5,7 +5,7 @@ import Card from "@material-ui/core/Card"
 import Chip from "@material-ui/core/Chip"
 import Responsive from "react-responsive"
 
-import THEME from "../../theme"
+import theme from "../../theme"
 import FabButton from "../shared/FabButton"
 import Chips from "../shared/Chips"
 
@@ -36,7 +36,7 @@ const ContentArea = ({ title, children, tags }: IContentAreaProps) => (
         <h1 style={{ marginBottom: 30, marginTop: 0, textAlign: "center" }}>
           {title}
         </h1>
-        <Chips labels={tags} />
+        <Chips labels={tags} justify="center"/>
         {children}
       </Card>
     </Default>
@@ -49,7 +49,7 @@ const ContentArea = ({ title, children, tags }: IContentAreaProps) => (
         >
           {title}
         </h1>
-        <Chips labels={tags} />
+        <Chips labels={tags} justify="center"/>
         {children}
       </Card>
     </Mobile>
@@ -71,11 +71,11 @@ const HeaderArea = ({ cover }: IHeaderArea) => {
 
 export default ({ title, cover, tags, children }: IBlogPostLayout) => {
   return (
-    <div style={{ backgroundColor: THEME.blogPost.layout.backgroundColor }}>
+    <div style={{ backgroundColor: theme.blogPost.layout.backgroundColor }}>
       <Default>
         <div
           style={{
-            maxWidth: THEME.blogPost.layout.cardMaxWidth,
+            maxWidth: theme.blogPost.layout.cardMaxWidth,
             margin: "0 auto",
             paddingTop: 40,
             paddingLeft: 20,

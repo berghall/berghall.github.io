@@ -1,6 +1,6 @@
 ---
 title: "Puhti, Work Project"
-tags: ["work", "project"]
+tags: ["Work project", "health", "WordPress", "WooCommerce"]
 date: "2018-11-20"
 description: "A bloodtesting service which gives results based on a package of your choosing"
 cover: "puhti.png"

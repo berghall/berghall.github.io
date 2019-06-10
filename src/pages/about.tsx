@@ -9,7 +9,7 @@ import SocialNetworks from "../components/me/social-networks"
 
 import profile1 from "../../static/img/profile1.jpg"
 
-import THEME from "../theme"
+import theme from "../theme"
 
 const Mobile = props => <Responsive {...props} maxWidth={767} />
 const Default = props => <Responsive {...props} minWidth={768} />
@@ -25,7 +25,7 @@ const ContentArea = ({ data }: any) => (
         textAlign: "center",
       }}
     >
-      I'm Daniel Berghälll
+      I'm Daniel Berghäll
     </h1>
     <img src={profile1} alt="Daniel Berghäll"/>
     {
@@ -47,13 +47,13 @@ export default ({ data }: any) => (
     <Default>
       <div
         style={{
-          backgroundColor: THEME.aboutPage.layout.backgroundColor,
+          backgroundColor: theme.aboutPage.layout.backgroundColor,
           minHeight: "100vh",
         }}
       >
         <div
           style={{
-            maxWidth: THEME.aboutPage.layout.cardMaxWidth,
+            maxWidth: theme.aboutPage.layout.cardMaxWidth,
             margin: "0 auto",
             paddingTop: 40,
             paddingLeft: 20,

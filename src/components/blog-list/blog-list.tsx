@@ -20,6 +20,7 @@ interface IProps {
     frontmatter: {
       date: string
       title: string
+      tags: string[]
       description: string
       cover?: {
         childImageSharp?: {
@@ -29,6 +30,7 @@ interface IProps {
     }
   }[]
   totalCount: number
+  tags: string[]
 }
 
 /* 
@@ -74,6 +76,7 @@ class BlogListDesktop extends React.Component<IProps, {}> {
                 slug: node.fields.slug,
                 date: node.frontmatter.date,
                 title: node.frontmatter.title,
+                tags: node.frontmatter.tags,
                 description: node.frontmatter.description,
                 coverFluid:
                   node.frontmatter.cover &&
@@ -109,6 +112,7 @@ class BlogListMobile extends React.Component<IProps, {}> {
                 slug: node.fields.slug,
                 date: node.frontmatter.date,
                 title: node.frontmatter.title,
+                tags: node.frontmatter.tags,
                 description: node.frontmatter.description,
                 coverFluid:
                   node.frontmatter.cover &&
@@ -130,10 +134,10 @@ class BlogListMobile extends React.Component<IProps, {}> {
 const BlogList = (props: IProps) => (
   <>
     <Default>
-      <BlogListDesktop posts={props.posts} totalCount={props.totalCount} />
+      <BlogListDesktop posts={props.posts} tags={props.tags} totalCount={props.totalCount} />
     </Default>
     <Mobile>
-      <BlogListMobile posts={props.posts} totalCount={props.totalCount} />
+      <BlogListMobile posts={props.posts} tags={props.tags} totalCount={props.totalCount} />
     </Mobile>
   </>
 )

@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Button from "@material-ui/core/Button"
-import THEME from "../../theme"
+import theme from "../../theme"
 
 export default () => (
   <div style={{ textAlign: "right" }}>
@@ -11,11 +11,11 @@ export default () => (
         style={{
           marginRight: 30,
           marginTop: 30,
-          color: THEME.index.aboutButton.color,
-          borderColor: THEME.index.aboutButton.borderColor,
-          backgroundColor: THEME.index.aboutButton.backgroundColor,
+          color: theme.index.aboutButton.color,
+          borderColor: theme.index.aboutButton.borderColor,
+          backgroundColor: theme.index.aboutButton.backgroundColor,
           textTransform: "none",
-          width: THEME.index.aboutButton.width,
+          width: theme.index.aboutButton.width,
         }}
       >
         About

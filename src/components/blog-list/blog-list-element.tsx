@@ -8,19 +8,21 @@ import CardContent from "@material-ui/core/CardContent"
 import Typography from "@material-ui/core/Typography"
 import Avatar from "@material-ui/core/Avatar"
 import CardHeader from "@material-ui/core/CardHeader"
-import THEME from "../../theme";
+
+import Chips from "../shared/Chips"
+
+import theme from "../../theme";
 
 interface IBlogListElement {
   data: {
     slug: string
     date: string
     title: string
+    tags: string[]
     description: string
     coverFluid: FluidObject | null
   }
 }
-
-React
 
 export default ({ data }: IBlogListElement) => (
   <div style={{ marginTop: 25, marginBottom: 25 }}>
@@ -37,8 +39,8 @@ export default ({ data }: IBlogListElement) => (
             avatar={
               <Avatar
                 style={{ 
-                  backgroundColor: THEME.blogListElement.avatar.backgroundColor,
-                  color: THEME.blogListElement.avatar.color, 
+                  backgroundColor: theme.blogListElement.avatar.backgroundColor,
+                  color: theme.blogListElement.avatar.color, 
                   textShadow: "none" 
                 }}
               >
@@ -51,6 +53,7 @@ export default ({ data }: IBlogListElement) => (
           {data.coverFluid ? <Image fluid={data.coverFluid} /> : null}
           <CardContent>
             <Typography component="p">{data.description}</Typography>
+            <Chips labels={data.tags} justify="left"/>
           </CardContent>
         </Link>
       </CardActionArea>

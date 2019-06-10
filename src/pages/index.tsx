@@ -8,12 +8,14 @@ interface IProps {
   data: {
     allMarkdownRemark: {
       totalCount: number
+      tags: string[]
       edges: {
         node: {
           id: string
           frontmatter: {
             title: string
             date: string
+            tags: string[]
             description: string
             cover: {
               childImageSharp: {
@@ -38,9 +40,11 @@ class Index extends React.Component<IProps> {
     )
     const totalCount = this.props.data.allMarkdownRemark.totalCount
 
+    const tags = this.props.data.allMarkdownRemark.tags
+
     return (
       <Layout>
-        <BlogList posts={posts} totalCount={totalCount} />
+        <BlogList posts={posts} tags={tags} totalCount={totalCount} />
       </Layout>
     )
   }
@@ -58,6 +62,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            tags
             description
             cover {
               childImageSharp {

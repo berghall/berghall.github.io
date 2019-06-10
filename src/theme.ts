@@ -1,11 +1,13 @@
-const THEME = {
+const primary: string = "#f7931e"
+const secondary: string = "#ed1e79"
+const theme = {
   blogPost: {
     layout: {
       cardMaxWidth: 1000,
       backgroundColor: "#eeeeee",
     },
     showMoreButton: {
-      color: "#059ce2",
+      color: primary,
       borderColor: "#059ce2",
       backgroundColor: "none",
       width: 130,
@@ -23,7 +25,7 @@ const THEME = {
       backgroundColor: "#eeeeee",
     },
     header: {
-      backgroundImage: "linear-gradient(20deg, #176786, #2E819D)",
+      backgroundImage: `linear-gradient(20deg, ${primary}, ${secondary})`,
     },
     aboutButton: {
       color: "white",
@@ -52,7 +54,7 @@ const THEME = {
     height: 25,
   },
   fabButton: {
-    color: "#176786",
+    color: primary,
     backgroundColor: "white",
   },
   networkButton: {
@@ -69,4 +71,8 @@ const THEME = {
   },
 }
 
-export default THEME
+export {
+  primary,
+  secondary
+}
+export default theme
