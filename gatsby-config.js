@@ -65,7 +65,7 @@ module.exports = {
         short_name: "Daniels portfolio",
         start_url: "/",
         background_color: "#eeeeee",
-        theme_color: "#0c9ed1",
+        theme_color: "#f7931e",
         display: "standalone",
         icon: "static/img/me.png",
         include_favicon: true,
@@ -105,6 +105,7 @@ module.exports = {
         },
       },
     },
+    "gatsby-plugin-react-helmet"
   ],
   pathPrefix: "/img",
 }

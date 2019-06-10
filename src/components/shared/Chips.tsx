@@ -28,12 +28,14 @@ const Chips: React.FunctionComponent<IChipProps> = ({ labels }) => {
   
   const classes = useStyles({});
   
+  let categories = labels.map((label => label.charAt(0).toUpperCase() + label.slice(1)))
+
   return (
     <div className={classes.root}>
-      {labels.map(label => (
+      {categories.map(label => (
         <Chip
           key={label}
-          label={label.charAt(0).toUpperCase() + label.slice(1)}
+          label={label}
           className={classes.chip}
         />
       ))}
