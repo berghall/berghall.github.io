@@ -2,9 +2,16 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layouts/blog-post-layout"
 import { FluidObject } from "gatsby-image"
+import SEO from "../components/shared/Seo";
 
 interface IBlogPost {
   data: {
+    site: {
+      siteMetadata: {
+        title: string
+        about: string
+      }
+    }
     markdownRemark: {
       html: string
       frontmatter: {
@@ -28,18 +35,27 @@ export default ({ data }: IBlogPost) => {
       : null
 
   return (
-    <Layout title={node.frontmatter.title} cover={cover} tags={node.frontmatter.tags}>
-      {
-        // tslint:disable:react-no-dangerous-html
-        <div dangerouslySetInnerHTML={{ __html: node.html }} />
-        // tslint:enable:react-no-dangerous-html
-      }
-    </Layout>
+    <>
+      <SEO pageName={node.frontmatter.title} data={data} />
+      <Layout title={node.frontmatter.title} cover={cover} tags={node.frontmatter.tags}>
+        {
+          // tslint:disable:react-no-dangerous-html
+          <div dangerouslySetInnerHTML={{ __html: node.html }} />
+          // tslint:enable:react-no-dangerous-html
+        }
+      </Layout>
+    </>
   )
 }
 
 export const query = graphql`
   query($slug: String!, $coverImageMaxWidth: Int!) {
+    site {
+      siteMetadata {
+        title
+        about
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {

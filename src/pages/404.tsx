@@ -1,13 +1,11 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 
 import Card from "@material-ui/core/Card"
 
 import Responsive from "react-responsive"
 import FabButton from "../components/shared/FabButton"
 import SocialNetworks from "../components/me/social-networks"
-
-import profile1 from "../../static/img/profile1.jpg"
 
 import theme from "../theme"
 import SEO from "../components/shared/Seo";
@@ -19,33 +17,26 @@ const ContentArea = ({ data }: any) => (
   <Card style={{ padding: 50, flexGrow: 1 }}>
     <h1
       style={{
-        marginBottom: 30,
         marginTop: 0,
         marginLeft: 30,
         marginRight: 30,
         textAlign: "center",
       }}
     >
-      I'm Daniel Berghäll
+      404 Not Found
     </h1>
-    <img src={profile1} alt="Daniel Berghäll"/>
-    {
-      // tslint:disable:react-no-dangerous-html
-      <div dangerouslySetInnerHTML={{ __html: data.site.siteMetadata.about }} />
-      // tslint:enable:react-no-dangerous-html
-    }
   </Card>
 )
 
 const HeaderArea = () => {
-  const goBack = () => window.history.back()
+  const goBack = () => navigate("/")
 
   return <FabButton onClickHandler={goBack} />
 }
 
 export default ({ data }: any) => (
   <>
-    <SEO pageName="About" data={data}/>
+    <SEO pageName="404 Not Found" data={data}/>
     <Default>
       <div
         style={{
@@ -65,7 +56,6 @@ export default ({ data }: any) => (
         >
           <HeaderArea />
           <ContentArea data={data} />
-          <SocialNetworks networks={data.site.siteMetadata.networks} />
         </div>
       </div>
     </Default>
@@ -82,7 +72,6 @@ export const query = graphql`
       siteMetadata {
         title
         about
-        networks
       }
     }
   }

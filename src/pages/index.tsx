@@ -47,11 +47,11 @@ class Index extends React.Component<IProps> {
     )
     const totalCount = this.props.data.allMarkdownRemark.totalCount
     const tags = this.props.data.allMarkdownRemark.tags
-    const meta = this.props.data.site.siteMetadata;
+    const meta = this.props.data;
 
     return (
       <Layout>
-        <Seo pageName='Home' description={meta.about} title={meta.title} />
+        <Seo pageName='Home' data={meta}/>
         <BlogList posts={posts} tags={tags} totalCount={totalCount} />
       </Layout>
     )
