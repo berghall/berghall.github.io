@@ -8,7 +8,7 @@ import { primary, secondary } from "../../theme"
 const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',
-    justifyContent: props => props.justifyContent,
+    justifyContent: 'left',
     flexWrap: 'wrap',
     padding: '2px'
   },
@@ -22,13 +22,11 @@ const useStyles = makeStyles(() => ({
 
 interface IChipProps {
   labels: string[]
-  justify: string
 }
 
-const Chips: React.FunctionComponent<IChipProps> = ({ labels, justify }) => {
-  const props = { justifyContent: justify };
+const Chips: React.FunctionComponent<IChipProps> = ({ labels }) => {
   
-  const classes = useStyles(props);
+  const classes = useStyles({});
   
   return (
     <div className={classes.root}>

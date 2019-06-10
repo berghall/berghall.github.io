@@ -36,7 +36,7 @@ const ContentArea = ({ title, children, tags }: IContentAreaProps) => (
         <h1 style={{ marginBottom: 30, marginTop: 0, textAlign: "center" }}>
           {title}
         </h1>
-        <Chips labels={tags} justify="center"/>
+        <Chips labels={tags} />
         {children}
       </Card>
     </Default>
@@ -49,7 +49,7 @@ const ContentArea = ({ title, children, tags }: IContentAreaProps) => (
         >
           {title}
         </h1>
-        <Chips labels={tags} justify="center"/>
+        <Chips labels={tags} />
         {children}
       </Card>
     </Mobile>

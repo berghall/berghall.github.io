@@ -53,7 +53,7 @@ export default ({ data }: IBlogListElement) => (
           {data.coverFluid ? <Image fluid={data.coverFluid} /> : null}
           <CardContent>
             <Typography component="p">{data.description}</Typography>
-            <Chips labels={data.tags} justify="left"/>
+            <Chips labels={data.tags} />
           </CardContent>
         </Link>
       </CardActionArea>
