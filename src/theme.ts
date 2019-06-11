@@ -25,7 +25,7 @@ const theme = {
       backgroundColor: "#eeeeee",
     },
     header: {
-      backgroundImage: `linear-gradient(20deg, ${primary}, ${secondary})`,
+      background: `linear-gradient(20deg, ${primary}, ${secondary})`,
     },
     aboutButton: {
       color: "white",
@@ -36,8 +36,8 @@ const theme = {
   },
   author: {
     avatar: {
-      width: 70,
-      height: 70,
+      width: 256,
+      height: 256,
     },
     title: {
       color: "white",

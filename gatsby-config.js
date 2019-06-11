@@ -101,7 +101,8 @@ module.exports = {
       resolve: `gatsby-plugin-material-ui`,
       options: {
         theme: {
-          primaryColor: "#0c9ed1",
+          primaryColor: "#f7931e",
+          secondaryColor: "#ed1e79"
         },
       },
     },

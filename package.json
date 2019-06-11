@@ -44,6 +44,7 @@
     "mobx": "^5.9.4",
     "mobx-react": "^5.4.3",
     "prismjs": "^1.16.0",
+    "randomcolor": "^0.5.4",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-helmet": "^5.2.1",

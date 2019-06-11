@@ -1,6 +1,7 @@
 import * as React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Responsive from "react-responsive"
+import { makeStyles } from '@material-ui/styles';
 
 import Author from "../me/author"
 import AboutButton from "../me/about-button"
@@ -40,25 +41,44 @@ interface IHeaderArea {
   }
 }
 
-const HeaderArea = ({ data, styles }: IHeaderArea) => (
-  <div
-    style={{
-      backgroundImage: theme.index.header.backgroundImage,
-    }}
-  >
-    <AboutButton />
-    <div
-      style={{
-        paddingTop: styles.paddingTop,
-        paddingBottom: styles.paddingBottom,
-      }}
-    >
-      <Author author={data.site.siteMetadata.author} />
-      <SocialNetworks networks={data.site.siteMetadata.networks} />
-      <CallToActionButton />
+const useStyles = makeStyles(() => ({
+  hero: {
+    background: theme.index.header.background,
+    backgroundSize: '150% 150%',
+    animation: '$gradient 10s ease infinite'
+  },
+  '@keyframes gradient': {
+    '0%': {
+      'background-position': '0% 50%'
+    },
+    '50%': {
+      'background-position': '100% 50%'
+    },
+    '100%': {
+      'background-position': '0% 50%'
+    }
+  },
+}));
+
+const HeaderArea = ({ data, styles }: IHeaderArea) => {
+  const classes = useStyles({});
+
+  return (
+    <div className={classes.hero}>
+      <AboutButton />
+      <div
+        style={{
+          paddingTop: styles.paddingTop,
+          paddingBottom: styles.paddingBottom,
+        }}
+      >
+        <Author author={data.site.siteMetadata.author} />
+        <SocialNetworks networks={data.site.siteMetadata.networks} />
+        <CallToActionButton />
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 const ContentArea = ({ children }: { children: React.ReactNode }) => (
   <div

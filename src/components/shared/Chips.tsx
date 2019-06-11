@@ -2,8 +2,7 @@
 import * as React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import Chip from '@material-ui/core/Chip';
-
-import { primary, secondary } from "../../theme"
+import randomColor from 'randomcolor';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -12,33 +11,52 @@ const useStyles = makeStyles(() => ({
     flexWrap: 'wrap',
     padding: '2px'
   },
-  chip: {
-    margin: '2px',
-    background: `linear-gradient(20deg, ${primary}, ${secondary})`,
-    color: "white",
-    fontWeight: "bold"
-  },
-}));
+}))
+
+const chipStyles = (text: string) => makeStyles(() => {
+  
+  const seed = text.toLowerCase();
+
+  const darkColor = randomColor({
+    luminosity: 'dark',
+    format: 'hex',
+    seed
+  })
+
+  return {
+    chip: {
+      margin: '2px',
+      background: darkColor,
+      color: "white",
+      fontWeight: "bold"
+    },
+  }
+});
 
 interface IChipProps {
   labels: string[]
 }
 
 const Chips: React.FunctionComponent<IChipProps> = ({ labels }) => {
-  
   const classes = useStyles({});
-  
-  let categories = labels.map((label => label.charAt(0).toUpperCase() + label.slice(1)))
+
+  const categories = labels.map((label => label.charAt(0).toUpperCase() + label.slice(1)))
+
+  const Chips = categories.map(label => {
+    const classes = chipStyles(label)({});
+
+    return (
+      <Chip
+        key={label}
+        label={label}
+        className={classes.chip}
+      />
+    )
+  })
 
   return (
     <div className={classes.root}>
-      {categories.map(label => (
-        <Chip
-          key={label}
-          label={label}
-          className={classes.chip}
-        />
-      ))}
+      {Chips}
     </div>
   )
 };
