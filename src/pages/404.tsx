@@ -36,7 +36,7 @@ const HeaderArea = () => {
 
 export default ({ data }: any) => (
   <>
-    <SEO pageName="404 Not Found" data={data}/>
+    <SEO pageName="404 Not Found" />
     <Default>
       <div
         style={{

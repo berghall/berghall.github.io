@@ -45,7 +45,7 @@ const HeaderArea = () => {
 
 export default ({ data }: any) => (
   <>
-    <SEO pageName="About" data={data}/>
+    <SEO pageName="About" />
     <Default>
       <div
         style={{

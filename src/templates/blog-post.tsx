@@ -36,7 +36,7 @@ export default ({ data }: IBlogPost) => {
 
   return (
     <>
-      <SEO pageName={node.frontmatter.title} data={data} />
+      <SEO pageName={node.frontmatter.title} />
       <Layout title={node.frontmatter.title} cover={cover} tags={node.frontmatter.tags}>
         {
           // tslint:disable:react-no-dangerous-html

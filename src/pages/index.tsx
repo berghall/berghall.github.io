@@ -51,7 +51,7 @@ class Index extends React.Component<IProps> {
 
     return (
       <Layout>
-        <Seo pageName='Home' data={meta}/>
+        <Seo pageName='Home' />
         <BlogList posts={posts} tags={tags} totalCount={totalCount} />
       </Layout>
     )
