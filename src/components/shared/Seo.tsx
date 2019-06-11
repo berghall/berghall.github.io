@@ -5,8 +5,28 @@ import { StaticQuery, graphql } from "gatsby"
 interface ISEOProps {
   pageName: string
 }
+interface ISEOPropsWithData extends ISEOProps {
+  data: {
+    site: {
+      siteMetadata: {
+        title: string
+        about: string
+      }
+    }
+  }
+}
 
-export default ({ pageName }: ISEOProps) => (
+const HelmetContainer: React.FunctionComponent<ISEOPropsWithData> = ({ pageName, data }) => {
+  return (
+    <Helmet>
+      <html lang='en' />
+      <title>{`${pageName} |  ${data.site.siteMetadata.title}`}</title>
+      <meta name='description' content={data.site.siteMetadata.about} />
+    </Helmet>
+  )
+}
+
+export default ({pageName}, props: ISEOProps) => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
@@ -18,12 +38,7 @@ export default ({ pageName }: ISEOProps) => (
         }
       }
     `}
-    render={(data) => (
-      <Helmet>
-        <html lang='en' />
-        <title>{`${pageName} |  ${data.site.siteMetadata.title}`}</title>
-        <meta name='description' content={data.site.siteMetadata.about} />
-      </Helmet>
-    )}
+    // tslint:disable-next-line
+    render={(data) => <HelmetContainer data={data} pageName={pageName}/>}
   />
 )
