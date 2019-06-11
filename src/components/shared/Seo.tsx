@@ -18,7 +18,7 @@ export default ({ pageName }: ISEOProps) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <Helmet>
         <html lang='en' />
         <title>{`${pageName} |  ${data.site.siteMetadata.title}`}</title>
