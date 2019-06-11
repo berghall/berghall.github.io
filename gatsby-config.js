@@ -13,7 +13,7 @@ module.exports = {
       "https://linkedin.com/in/daniel-berghäll-693169105"
     ],
     about: `
-      I'm a passionate web developer from Finland who likes to tinker with new web technologies as well as IoT devices.
+      I'm a passionate web developer and Linux enthusiast from Finland who likes to tinker with new web technologies as well as IoT devices.
       I specialize in things like WordPress, React and Vue.
     `,
   },
