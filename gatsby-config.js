@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Daniel Berghäll Portfolio`,
+    siteUrl: "https://berghall.dev",
     author: {
       name: "Hello, I'm Daniel",
       image: "/img/me.png",
@@ -121,7 +122,9 @@ module.exports = {
           // gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_PREVIEW_NAME",
           // dataLayerName: "YOUR_DATA_LAYER_NAME",
         },
-    }
+    },
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-robots-txt"
   ],
   pathPrefix: "/img",
 }
