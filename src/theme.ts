@@ -36,8 +36,8 @@ const theme = {
   },
   author: {
     avatar: {
-      width: 256,
-      height: 256,
+      width: 200,
+      height: 200,
     },
     title: {
       color: "white",
