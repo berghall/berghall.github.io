@@ -124,7 +124,14 @@ module.exports = {
         },
     },
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-robots-txt"
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: 'https://berghall.dev',
+        sitemap: 'https://berghall.dev/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    }
   ],
   pathPrefix: "/img",
 }
