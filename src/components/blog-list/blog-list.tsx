@@ -71,20 +71,22 @@ class BlogListDesktop extends React.Component<IProps, {}> {
       <div style={{ minHeight: "50vh" }}>
         {this.props.posts.slice(0, blogPostStore.postsToShow).map(node => (
           <div key={node.id}>
-            <BlogListElement
-              data={{
-                slug: node.fields.slug,
-                date: node.frontmatter.date,
-                title: node.frontmatter.title,
-                tags: node.frontmatter.tags,
-                description: node.frontmatter.description,
-                coverFluid:
-                  node.frontmatter.cover &&
-                  node.frontmatter.cover.childImageSharp
-                    ? node.frontmatter.cover.childImageSharp.fluid
-                    : null,
-              }}
-            />
+            { !(node.fields.slug.includes("drafts")) &&
+              <BlogListElement
+                data={{
+                  slug: node.fields.slug,
+                  date: node.frontmatter.date,
+                  title: node.frontmatter.title,
+                  tags: node.frontmatter.tags,
+                  description: node.frontmatter.description,
+                  coverFluid:
+                    node.frontmatter.cover &&
+                    node.frontmatter.cover.childImageSharp
+                      ? node.frontmatter.cover.childImageSharp.fluid
+                      : null,
+                }}
+              />
+            }
           </div>
         ))}
       </div>
@@ -107,20 +109,22 @@ class BlogListMobile extends React.Component<IProps, {}> {
       <div style={{ minHeight: "50vh" }}>
         {this.props.posts.slice(0, blogPostStore.postsToShow).map(node => (
           <div key={node.id}>
-            <BlogListElement
-              data={{
-                slug: node.fields.slug,
-                date: node.frontmatter.date,
-                title: node.frontmatter.title,
-                tags: node.frontmatter.tags,
-                description: node.frontmatter.description,
-                coverFluid:
-                  node.frontmatter.cover &&
-                  node.frontmatter.cover.childImageSharp
-                    ? node.frontmatter.cover.childImageSharp.fluid
-                    : null,
-              }}
-            />
+            { !(node.fields.slug.includes("drafts")) &&
+              <BlogListElement
+                data={{
+                  slug: node.fields.slug,
+                  date: node.frontmatter.date,
+                  title: node.frontmatter.title,
+                  tags: node.frontmatter.tags,
+                  description: node.frontmatter.description,
+                  coverFluid:
+                    node.frontmatter.cover &&
+                    node.frontmatter.cover.childImageSharp
+                      ? node.frontmatter.cover.childImageSharp.fluid
+                      : null,
+                }}
+              />
+            }
           </div>
         ))}
         {this.props.totalCount > blogPostStore.postsToShow && (
