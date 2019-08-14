@@ -1,5 +1,7 @@
 import * as React from "react"
 import { SocialIcon } from "react-social-icons"
+import cvlogo from "../../../static/img/cv.png"
+import cv from "../../../static/BerghallCV_EN.pdf"
 import theme from "../../theme"
 
 interface ISocialNetworks {
@@ -36,5 +38,25 @@ export default ({ networks }: ISocialNetworks) => (
         />
       </li>
     ))}
+    <li
+      key="CV"
+      style={{
+        display: "inline-block",
+        verticalAlign: "top",
+        paddingRight: 5,
+        paddingLeft: 5,
+      }}
+    >
+      <a 
+        href={cv}
+        role="button"
+      >
+          <img 
+            src={cvlogo} 
+            role="presentation"
+            alt=""
+          />
+      </a>
+    </li>
   </ul>
 )
